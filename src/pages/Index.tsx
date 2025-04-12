@@ -30,38 +30,38 @@ const Index = () => {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
           <p className="text-muted-foreground">
-            Monitor de transações e decisões de aprovação inteligente.
+            Intelligent Transaction Approval Monitoring System
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <StatisticsCard
-            title="Transações Totais"
+            title="Total Transactions"
             value={totalTransactions}
             icon={<BarChart3 />}
-            description="nas últimas 24 horas"
+            description="in the last 24 hours"
           />
           <StatisticsCard
-            title="Transações Bloqueadas"
+            title="Blocked Transactions"
             value={blockedTransactions}
             icon={<ShieldAlert />}
-            description={`${Math.round((blockedTransactions / totalTransactions) * 100)}% do total`}
+            description={`${Math.round((blockedTransactions / totalTransactions) * 100)}% of total`}
           />
           <StatisticsCard
-            title="Sobrescrições Aplicadas"
+            title="Applied Overrides"
             value={overrideTransactions}
             icon={<ShieldCheck />}
-            description={`${overridePercentage}% dos bloqueios`}
+            description={`${overridePercentage}% of blocks`}
             trend={{
               value: 20,
               isPositive: true
             }}
           />
           <StatisticsCard
-            title="Score Médio de Risco"
+            title="Average Risk Score"
             value={averageRiskScore}
             icon={<TrendingUp />}
-            description="em escala de 0-100"
+            description="on a 0-100 scale"
           />
         </div>
         

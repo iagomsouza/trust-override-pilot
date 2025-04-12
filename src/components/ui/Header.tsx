@@ -11,8 +11,8 @@ export const Header: React.FC = () => {
 
   const handleNotificationClick = () => {
     toast({
-      title: "Notificações",
-      description: "Você não tem novas notificações.",
+      title: "Notifications",
+      description: "You have no new notifications.",
     });
   };
 
@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
           <div className="hidden md:flex items-center relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
             <Input 
-              placeholder="Buscar transações..." 
+              placeholder="Search transactions..." 
               className="pl-9 w-[250px] bg-gray-50 border-gray-200 focus:bg-white"
             />
           </div>
