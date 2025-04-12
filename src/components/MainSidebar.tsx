@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Sidebar, 
   SidebarContent, 
@@ -42,37 +43,37 @@ export function MainSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/" className="flex items-center">
+                  <Link to="/dashboard" className="flex items-center">
                     <Home className="h-5 w-5 mr-3" />
                     <span>Dashboard</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#" className="flex items-center">
+                  <Link to="/dashboard" className="flex items-center">
                     <ListFilter className="h-5 w-5 mr-3" />
                     <span>Transactions</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#" className="flex items-center">
+                  <Link to="/dashboard" className="flex items-center">
                     <AlertTriangle className="h-5 w-5 mr-3" />
                     <span>Alerts</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#" className="flex items-center">
+                  <Link to="/dashboard" className="flex items-center">
                     <BarChart2 className="h-5 w-5 mr-3" />
                     <span>Reports</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -85,19 +86,19 @@ export function MainSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#" className="flex items-center">
+                  <Link to="/dashboard" className="flex items-center">
                     <Users className="h-5 w-5 mr-3" />
                     <span>Users</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#" className="flex items-center">
+                  <Link to="/dashboard" className="flex items-center">
                     <Settings className="h-5 w-5 mr-3" />
                     <span>Settings</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
