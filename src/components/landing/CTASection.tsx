@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -14,22 +13,24 @@ const CTASection: React.FC<{ id: string }> = ({ id }) => {
           Join our early access program and see how our AI can transform your fraud prevention.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            size="lg" 
-            variant="secondary" 
+          <Button
+            size="lg"
+            variant="secondary"
             className="bg-white text-blue-600 hover:bg-gray-100"
-            onClick={() => window.open('mailto:demo@fraudguardai.com?subject=Access Request', '_blank')}
+            asChild
           >
-            Request access
+            <Link to="/check-auth">
+              Check Authentication Status
+            </Link>
           </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
+          <Button
+            size="lg"
+            variant="outline"
             className="border-white text-white hover:bg-blue-700"
             asChild
           >
-            <Link to="/dashboard">
-              See dashboard demo
+            <Link to="/login">
+              Sign in or Sign up
             </Link>
           </Button>
         </div>

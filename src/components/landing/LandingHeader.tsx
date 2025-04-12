@@ -1,9 +1,9 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { supabase } from '@/lib/supabase';
 
 interface LandingHeaderProps {
   scrollToSection: (id: string) => void;
@@ -11,10 +11,85 @@ interface LandingHeaderProps {
 
 const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const isMobile = useIsMobile();
+
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const { data, error } = await supabase.auth.getSession();
+        if (error) {
+          console.error('Error checking auth status:', error);
+          setIsLoggedIn(false);
+        } else {
+          setIsLoggedIn(!!data.session);
+        }
+      } catch (error) {
+        console.error('Error checking auth status:', error);
+        setIsLoggedIn(false);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkAuthStatus();
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Render login buttons or dashboard button based on auth status
+  const renderAuthButtons = () => {
+    if (isLoading) {
+      return <div className="w-16 h-8 bg-gray-200 animate-pulse rounded"></div>;
+    }
+
+    if (isLoggedIn) {
+      return (
+        <Link to="/dashboard">
+          <Button>Dashboard</Button>
+        </Link>
+      );
+    }
+
+    return (
+      <>
+        <Link to="/login">
+          <Button variant="outline">Sign In</Button>
+        </Link>
+        <Link to="/login">
+          <Button>Sign Up</Button>
+        </Link>
+      </>
+    );
+  };
+
+  // Mobile auth buttons
+  const renderMobileAuthButtons = () => {
+    if (isLoading) {
+      return <div className="w-full h-10 bg-gray-200 animate-pulse rounded"></div>;
+    }
+
+    if (isLoggedIn) {
+      return (
+        <Link to="/dashboard" className="w-full">
+          <Button className="w-full">Dashboard</Button>
+        </Link>
+      );
+    }
+
+    return (
+      <div className="pt-4 flex space-x-2">
+        <Link to="/login" className="w-full">
+          <Button variant="outline" className="w-full">Sign In</Button>
+        </Link>
+        <Link to="/login" className="w-full">
+          <Button className="w-full">Sign Up</Button>
+        </Link>
+      </div>
+    );
   };
 
   return (
@@ -66,11 +141,7 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
                   >
                     Comparison
                   </Button>
-                  <div className="pt-4">
-                    <Link to="/dashboard">
-                      <Button className="w-full">Dashboard</Button>
-                    </Link>
-                  </div>
+                  {renderMobileAuthButtons()}
                 </nav>
               </div>
             )}
@@ -100,10 +171,8 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
               </Button>
             </nav>
 
-            <div className="hidden md:block">
-              <Link to="/dashboard">
-                <Button>Dashboard</Button>
-              </Link>
+            <div className="hidden md:flex space-x-2">
+              {renderAuthButtons()}
             </div>
           </>
         )}

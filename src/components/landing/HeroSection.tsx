@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
@@ -20,28 +20,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
               Reduce false positives by 20% and enhance customer experience through contextual trust assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="group"
                 onClick={() => scrollToSection('how-it-works')}
               >
                 See how it works
                 <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                onClick={() => scrollToSection('cta')}
+                asChild
               >
-                Request access
+                <Link to="/login">
+                  Try it now
+                </Link>
               </Button>
             </div>
           </div>
           <div className="md:w-1/2 relative">
             <div className="aspect-video bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-              <img 
-                src="/lovable-uploads/e46c5599-905f-4b2c-98f6-a88d37e09680.png" 
-                alt="TrustOverride Dashboard" 
+              <img
+                src="/lovable-uploads/e46c5599-905f-4b2c-98f6-a88d37e09680.png"
+                alt="TrustOverride Dashboard"
                 className="w-full h-full object-cover"
               />
             </div>
