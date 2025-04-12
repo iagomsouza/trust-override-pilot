@@ -40,16 +40,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           <div className="md:w-1/2 relative">
             <div className="aspect-video bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/e46c5599-905f-4b2c-98f6-a88d37e09680.png" 
                 alt="TrustOverride Dashboard" 
                 className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                alt="TrustOverride AI Fraud Detection Dashboard" 
-                className="w-full h-full object-cover rounded-xl shadow-lg"
               />
             </div>
           </div>
@@ -60,4 +53,3 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
 };
 
 export default HeroSection;
-
