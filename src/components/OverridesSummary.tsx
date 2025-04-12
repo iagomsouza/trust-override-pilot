@@ -18,12 +18,12 @@ export const OverridesSummary: React.FC<OverridesSummaryProps> = ({ transactions
     return (
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg font-semibold">Transações Sobrescritas</CardTitle>
+          <CardTitle className="text-lg font-semibold">Overridden Transactions</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center py-6 text-gray-500">
             <Shield className="h-12 w-12 mb-2 opacity-30" />
-            <p>Nenhuma transação sobrescrita encontrada.</p>
+            <p>No overridden transactions found.</p>
           </div>
         </CardContent>
       </Card>
@@ -33,7 +33,7 @@ export const OverridesSummary: React.FC<OverridesSummaryProps> = ({ transactions
   return (
     <Card>
       <CardHeader className="pb-2">
-        <CardTitle className="text-lg font-semibold">Transações Sobrescritas</CardTitle>
+        <CardTitle className="text-lg font-semibold">Overridden Transactions</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -51,16 +51,16 @@ export const OverridesSummary: React.FC<OverridesSummaryProps> = ({ transactions
                 </div>
               </div>
               <div className="text-sm text-gray-700 mb-1">
-                {new Intl.NumberFormat('pt-BR', {
+                {new Intl.NumberFormat('en-US', {
                   style: 'currency',
                   currency: tx.currency,
                 }).format(tx.amount)} • {tx.category}
               </div>
               <div className="text-sm bg-white p-2 rounded border border-green-200">
-                <span className="font-medium text-green-700">Motivo:</span> {tx.overrideReason}
+                <span className="font-medium text-green-700">Reason:</span> {tx.overrideReason}
               </div>
               <div className="mt-2 text-xs text-gray-500">
-                ID: {tx.id} • Dispositivo: {tx.deviceId.split('-')[0]}... • Usos anteriores: {tx.previousUses}
+                ID: {tx.id} • Device: {tx.deviceId.split('-')[0]}... • Previous uses: {tx.previousUses}
               </div>
             </div>
           ))}

@@ -37,7 +37,7 @@ export function MainSidebar() {
       
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Principal</SidebarGroupLabel>
+          <SidebarGroupLabel>Main</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
@@ -53,7 +53,7 @@ export function MainSidebar() {
                 <SidebarMenuButton asChild>
                   <a href="#" className="flex items-center">
                     <ListFilter className="h-5 w-5 mr-3" />
-                    <span>Transações</span>
+                    <span>Transactions</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -62,7 +62,7 @@ export function MainSidebar() {
                 <SidebarMenuButton asChild>
                   <a href="#" className="flex items-center">
                     <AlertTriangle className="h-5 w-5 mr-3" />
-                    <span>Alertas</span>
+                    <span>Alerts</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -71,7 +71,7 @@ export function MainSidebar() {
                 <SidebarMenuButton asChild>
                   <a href="#" className="flex items-center">
                     <BarChart2 className="h-5 w-5 mr-3" />
-                    <span>Relatórios</span>
+                    <span>Reports</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -80,14 +80,14 @@ export function MainSidebar() {
         </SidebarGroup>
         
         <SidebarGroup>
-          <SidebarGroupLabel>Sistema</SidebarGroupLabel>
+          <SidebarGroupLabel>System</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <a href="#" className="flex items-center">
                     <Users className="h-5 w-5 mr-3" />
-                    <span>Usuários</span>
+                    <span>Users</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -96,7 +96,7 @@ export function MainSidebar() {
                 <SidebarMenuButton asChild>
                   <a href="#" className="flex items-center">
                     <Settings className="h-5 w-5 mr-3" />
-                    <span>Configurações</span>
+                    <span>Settings</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>

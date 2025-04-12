@@ -19,7 +19,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, className }) =
         )}
       >
         <CheckCircle className="h-3.5 w-3.5" />
-        Aprovado
+        Approved
       </Badge>
     );
   }
@@ -32,7 +32,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, className }) =
       )}
     >
       <AlertCircle className="h-3.5 w-3.5" />
-      Bloqueado
+      Blocked
     </Badge>
   );
 };

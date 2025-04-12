@@ -15,7 +15,7 @@ export const FilterControls: React.FC = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
             <Input
               className="pl-9"
-              placeholder="Buscar por ID, estabelecimento..."
+              placeholder="Search by ID, merchant..."
             />
           </div>
           
@@ -25,43 +25,43 @@ export const FilterControls: React.FC = () => {
                 <SelectValue placeholder="Status" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todos os status</SelectItem>
-                <SelectItem value="approved">Aprovados</SelectItem>
-                <SelectItem value="blocked">Bloqueados</SelectItem>
-                <SelectItem value="overridden">Sobrescritos</SelectItem>
+                <SelectItem value="all">All statuses</SelectItem>
+                <SelectItem value="approved">Approved</SelectItem>
+                <SelectItem value="blocked">Blocked</SelectItem>
+                <SelectItem value="overridden">Overridden</SelectItem>
               </SelectContent>
             </Select>
             
             <Select defaultValue="all">
               <SelectTrigger>
-                <SelectValue placeholder="Nível de Risco" />
+                <SelectValue placeholder="Risk Level" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todos os riscos</SelectItem>
-                <SelectItem value="low">Baixo Risco</SelectItem>
-                <SelectItem value="medium">Médio Risco</SelectItem>
-                <SelectItem value="high">Alto Risco</SelectItem>
+                <SelectItem value="all">All risks</SelectItem>
+                <SelectItem value="low">Low Risk</SelectItem>
+                <SelectItem value="medium">Medium Risk</SelectItem>
+                <SelectItem value="high">High Risk</SelectItem>
               </SelectContent>
             </Select>
             
             <Select defaultValue="today">
               <SelectTrigger>
-                <SelectValue placeholder="Período" />
+                <SelectValue placeholder="Period" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="today">Hoje</SelectItem>
-                <SelectItem value="week">Última Semana</SelectItem>
-                <SelectItem value="month">Último Mês</SelectItem>
-                <SelectItem value="custom">Personalizado</SelectItem>
+                <SelectItem value="today">Today</SelectItem>
+                <SelectItem value="week">Last Week</SelectItem>
+                <SelectItem value="month">Last Month</SelectItem>
+                <SelectItem value="custom">Custom</SelectItem>
               </SelectContent>
             </Select>
           </div>
           
           <div className="flex gap-2">
-            <Button variant="default">Filtrar</Button>
+            <Button variant="default">Filter</Button>
             <Button variant="outline" className="flex items-center gap-1">
               <FilterX className="h-4 w-4" />
-              <span>Limpar</span>
+              <span>Clear</span>
             </Button>
           </div>
         </div>
