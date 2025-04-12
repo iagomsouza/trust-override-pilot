@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -17,6 +16,14 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 
 const LandingPage = () => {
+  // Function to scroll to a section
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
@@ -28,25 +35,37 @@ const LandingPage = () => {
               <span>TrustOverride</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
-              <Link to="#" className="text-sm font-medium text-gray-600 hover:text-primary">
+              <button 
+                onClick={() => scrollToSection('benefits')} 
+                className="text-sm font-medium text-gray-600 hover:text-primary"
+              >
                 Product
-              </Link>
-              <Link to="#" className="text-sm font-medium text-gray-600 hover:text-primary">
+              </button>
+              <button 
+                onClick={() => scrollToSection('comparison')} 
+                className="text-sm font-medium text-gray-600 hover:text-primary"
+              >
                 Features
-              </Link>
-              <Link to="#" className="text-sm font-medium text-gray-600 hover:text-primary">
+              </button>
+              <button 
+                onClick={() => scrollToSection('how-it-works')} 
+                className="text-sm font-medium text-gray-600 hover:text-primary"
+              >
                 Documentation
-              </Link>
-              <Link to="#" className="text-sm font-medium text-gray-600 hover:text-primary">
+              </button>
+              <button 
+                onClick={() => scrollToSection('cta')} 
+                className="text-sm font-medium text-gray-600 hover:text-primary"
+              >
                 Contact
-              </Link>
+              </button>
             </nav>
           </div>
           <div className="flex items-center gap-4">
             <Badge variant="outline" className="bg-blue-50 text-blue-600 border-blue-200">
               Hackathon Demo
             </Badge>
-            <Link to="/" className="hidden md:block">
+            <Link to="/dashboard">
               <Button variant="outline">Dashboard</Button>
             </Link>
           </div>
@@ -66,11 +85,19 @@ const LandingPage = () => {
                   Reduce false positives by 20% and enhance customer experience through contextual trust assessment.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button size="lg" className="group">
+                  <Button 
+                    size="lg" 
+                    className="group"
+                    onClick={() => scrollToSection('how-it-works')}
+                  >
                     See how it works
                     <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
-                  <Button variant="outline" size="lg">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={() => scrollToSection('cta')}
+                  >
                     Request access
                   </Button>
                 </div>
@@ -91,7 +118,7 @@ const LandingPage = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 md:px-8">
+        <section id="benefits" className="py-20 px-4 sm:px-6 md:px-8">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
@@ -146,7 +173,7 @@ const LandingPage = () => {
         </section>
 
         {/* Comparison Section */}
-        <section className="py-20 px-4 sm:px-6 md:px-8 bg-gray-50">
+        <section id="comparison" className="py-20 px-4 sm:px-6 md:px-8 bg-gray-50">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
@@ -238,7 +265,7 @@ const LandingPage = () => {
         </section>
 
         {/* Flow Diagram Section */}
-        <section className="py-20 px-4 sm:px-6 md:px-8">
+        <section id="how-it-works" className="py-20 px-4 sm:px-6 md:px-8">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight mb-4">
@@ -344,7 +371,7 @@ const LandingPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <section id="cta" className="py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
           <div className="container mx-auto max-w-5xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to reduce false positives and improve customer experience?
@@ -353,11 +380,23 @@ const LandingPage = () => {
               Join our early access program and see how our AI can transform your fraud prevention.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-white text-blue-600 hover:bg-gray-100"
+                onClick={() => window.open('mailto:demo@trustoverride.com?subject=Access Request', '_blank')}
+              >
                 Request access
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700">
-                See dashboard demo
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-blue-700"
+                asChild
+              >
+                <Link to="/dashboard">
+                  See dashboard demo
+                </Link>
               </Button>
             </div>
           </div>

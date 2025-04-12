@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
             className="text-gray-500 hover:text-gray-700"
             asChild
           >
-            <Link to="/settings">
+            <Link to="/dashboard">
               <Settings className="h-5 w-5" />
             </Link>
           </Button>
@@ -57,8 +57,11 @@ export const Header: React.FC = () => {
             variant="ghost" 
             size="icon"
             className="text-gray-600 bg-gray-100 hover:bg-gray-200"
+            asChild
           >
-            <User className="h-5 w-5" />
+            <Link to="/dashboard">
+              <User className="h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>
