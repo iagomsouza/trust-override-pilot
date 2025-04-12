@@ -18,7 +18,7 @@ const CTASection: React.FC<{ id: string }> = ({ id }) => {
             size="lg" 
             variant="secondary" 
             className="bg-white text-blue-600 hover:bg-gray-100"
-            onClick={() => window.open('mailto:demo@trustoverride.com?subject=Access Request', '_blank')}
+            onClick={() => window.open('mailto:demo@fraudguardai.com?subject=Access Request', '_blank')}
           >
             Request access
           </Button>

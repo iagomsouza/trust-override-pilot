@@ -7,8 +7,13 @@ interface CodeBlockProps {
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'javascript' }) => {
+  // Add FraudGuard AI comment to the code example if it doesn't have one
+  const processedCode = code.includes('FraudGuard AI') 
+    ? code 
+    : `// FraudGuard AI Fraud Detection API Example\n${code}`;
+    
   // Trim leading whitespace while preserving indentation structure
-  const trimmedCode = code
+  const trimmedCode = processedCode
     .split('\n')
     .map(line => line.trimStart())
     .join('\n')

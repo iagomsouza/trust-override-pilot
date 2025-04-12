@@ -30,7 +30,7 @@ export function MainSidebar() {
       <SidebarHeader className="flex items-center justify-between py-4">
         <div className="flex items-center px-2">
           <ShieldAlert className="h-6 w-6 mr-2 text-trust" />
-          <h1 className="text-lg font-bold">Smarter Fraud</h1>
+          <h1 className="text-lg font-bold">FraudGuard AI</h1>
         </div>
         <SidebarTrigger className="p-2 rounded-lg hover:bg-gray-100 lg:hidden mx-2" />
       </SidebarHeader>

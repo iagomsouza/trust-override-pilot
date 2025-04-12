@@ -50,9 +50,9 @@ const FooterSection: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
             <Shield className="h-6 w-6 text-blue-400 mr-2" />
-            <span className="font-semibold text-white">TrustOverride</span>
+            <span className="font-semibold text-white">FraudGuard AI</span>
           </div>
-          <p className="text-sm">© {new Date().getFullYear()} TrustOverride. All rights reserved.</p>
+          <p className="text-sm">© {new Date().getFullYear()} FraudGuard AI. All rights reserved.</p>
         </div>
       </div>
     </footer>
