@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for fraud detection
+				trust: {
+					DEFAULT: '#0EA5E9', // Ocean Blue
+					light: '#D3E4FD',   // Soft Blue
+				},
+				caution: {
+					DEFAULT: '#F59E0B', // Amber
+					light: '#FEF7CD',   // Soft Yellow
+				},
+				risk: {
+					DEFAULT: '#EA384C', // Red
+					light: '#FFDEE2',   // Soft Pink
 				}
 			},
 			borderRadius: {
