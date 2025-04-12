@@ -20,6 +20,9 @@ export const Header: React.FC = () => {
     <header className="border-b bg-white px-4 py-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 lg:gap-4">
+          <Link to="/" className="mr-4 font-semibold">
+            TrustOverride
+          </Link>
           <div className="hidden md:flex items-center relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
             <Input 
