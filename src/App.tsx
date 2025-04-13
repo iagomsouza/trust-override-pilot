@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import LoginPage from "./pages/LoginPage";
 import OnboardingPage from "./pages/OnboardingPage";
+import Demo from "./pages/Demo";
 
 // Auth status checker component for debugging
 import { supabase } from "./lib/supabase";
@@ -137,6 +139,7 @@ const App = () => (
         {/* Public routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/demo" element={<Demo />} />
         <Route path="/check-auth" element={<AuthChecker />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/features" element={<PlaceholderPage title="Features" />} />
