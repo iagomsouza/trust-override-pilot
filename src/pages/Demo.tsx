@@ -124,9 +124,6 @@ const Demo = () => {
       setTimeout(() => {
         setLoading(false);
         setStage(DemoStage.VERIFICATION);
-        setCurrentModuleIndex(-1);
-        setCompletedModules({});
-        setProgress(0);
         startVerificationProcess();
       }, 2000);
     }
@@ -134,6 +131,9 @@ const Demo = () => {
 
   // Start the verification process by triggering the first module
   const startVerificationProcess = () => {
+    setCurrentModuleIndex(-1);
+    setCompletedModules({});
+    setProgress(0);
     processNextModule();
   };
 
@@ -146,33 +146,42 @@ const Demo = () => {
   // Process verification modules one by one
   const processNextModule = () => {
     const nextIndex = currentModuleIndex + 1;
-    
     if (nextIndex < verificationModules.length) {
       setCurrentModuleIndex(nextIndex);
-      
-      const moduleProgress = Math.floor((nextIndex / verificationModules.length) * 100);
-      setProgress(moduleProgress);
-      
-      // Process the current module with a delay
-      setTimeout(() => {
-        setCompletedModules(prev => ({
-          ...prev,
-          [verificationModules[nextIndex].id]: true
-        }));
-        
-        // Move to the next module after a delay
-        setTimeout(() => {
-          processNextModule(); // Call recursively to process the next module
-        }, 800);
-      }, 1200);
-    } else {
-      // All modules processed, set progress to 100% and move to success
-      setProgress(100);
-      setTimeout(() => {
-        setStage(DemoStage.SUCCESS);
-      }, 1000);
     }
   };
+
+  // Watch for module changes and update progress
+  useEffect(() => {
+    if (stage !== DemoStage.VERIFICATION) return;
+
+    const currentModule = verificationModules[currentModuleIndex];
+    if (!currentModule) return;
+
+    // Update progress based on current module
+    const progress = Math.floor(((currentModuleIndex + 1) / verificationModules.length) * 100);
+    setProgress(progress);
+
+    // Mark current module as completed
+    setCompletedModules(prev => ({
+      ...prev,
+      [currentModule.id]: true
+    }));
+
+    // Schedule next module or complete verification
+    const timer = setTimeout(() => {
+      if (currentModuleIndex === verificationModules.length - 1) {
+        setProgress(100);
+        setTimeout(() => {
+          setStage(DemoStage.SUCCESS);
+        }, 1000);
+      } else {
+        processNextModule();
+      }
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [currentModuleIndex, stage]);
 
   // Reset the demo
   const resetDemo = () => {
