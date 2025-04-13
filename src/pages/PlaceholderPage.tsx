@@ -17,7 +17,7 @@ const PlaceholderPage: React.FC<PlaceholderPageProps> = ({ title }) => {
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <Shield className="h-6 w-6 text-blue-500" />
-            <span className="font-bold text-xl">FraudGuard AI</span>
+            <span className="font-bold text-xl">Sentinel</span>
           </Link>
           <Link to="/">
             <Button variant="outline" size="sm">
