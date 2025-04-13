@@ -1,4 +1,3 @@
-
 export interface Transaction {
   id: string;
   timestamp: string;
@@ -24,12 +23,12 @@ export const mockTransactions: Transaction[] = [
     merchant: "Apple Store",
     category: "Electronics",
     deviceId: "iphone-12-pro-8a72b",
-    location: "São Paulo, Brazil",
+    location: "Sao Paulo, Brazil",
     previousUses: 12,
     riskScore: 15, // Low risk
     originalStatus: "blocked",
     currentStatus: "approved",
-    overrideReason: "Dispositivo confiável usado em 12 compras anteriores"
+    overrideReason: "Trusted device used in 12 previous purchases"
   },
   {
     id: "tx-002",
@@ -44,7 +43,7 @@ export const mockTransactions: Transaction[] = [
     riskScore: 22, // Low risk
     originalStatus: "blocked",
     currentStatus: "approved",
-    overrideReason: "Localização e dispositivo reconhecidos de 8 transações anteriores"
+    overrideReason: "Location and device recognized from 8 previous transactions"
   },
   {
     id: "tx-003",
@@ -54,7 +53,7 @@ export const mockTransactions: Transaction[] = [
     merchant: "Dell Technologies",
     category: "Electronics",
     deviceId: "windows-pc-3e5f1",
-    location: "Brasília, Brazil",
+    location: "Brasilia, Brazil",
     previousUses: 2,
     riskScore: 60, // Medium risk
     originalStatus: "blocked",
@@ -69,12 +68,12 @@ export const mockTransactions: Transaction[] = [
     merchant: "Netflix",
     category: "Entertainment",
     deviceId: "iphone-12-pro-8a72b",
-    location: "São Paulo, Brazil",
+    location: "Sao Paulo, Brazil",
     previousUses: 13,
     riskScore: 12, // Low risk
     originalStatus: "blocked",
     currentStatus: "approved",
-    overrideReason: "Assinatura recorrente em dispositivo confiável"
+    overrideReason: "Recurring subscription on trusted device"
   },
   {
     id: "tx-005",
@@ -99,12 +98,12 @@ export const mockTransactions: Transaction[] = [
     merchant: "Uber",
     category: "Transportation",
     deviceId: "iphone-12-pro-8a72b",
-    location: "São Paulo, Brazil",
+    location: "Sao Paulo, Brazil",
     previousUses: 14,
     riskScore: 10, // Very low risk
     originalStatus: "blocked",
     currentStatus: "approved",
-    overrideReason: "Localização consistente com histórico de uso"
+    overrideReason: "Location consistent with usage history"
   },
   {
     id: "tx-007",
@@ -119,7 +118,7 @@ export const mockTransactions: Transaction[] = [
     riskScore: 25, // Low risk
     originalStatus: "blocked",
     currentStatus: "approved",
-    overrideReason: "Valor consistente com histórico de compras anteriores"
+    overrideReason: "Amount consistent with previous purchase history"
   },
   {
     id: "tx-008",
@@ -129,7 +128,7 @@ export const mockTransactions: Transaction[] = [
     merchant: "Flight Booking",
     category: "Travel",
     deviceId: "windows-pc-3e5f1",
-    location: "Brasília, Brazil",
+    location: "Brasilia, Brazil",
     previousUses: 3,
     riskScore: 72, // High risk
     originalStatus: "blocked",
@@ -144,12 +143,12 @@ export const mockTransactions: Transaction[] = [
     merchant: "Spotify",
     category: "Entertainment",
     deviceId: "iphone-12-pro-8a72b",
-    location: "São Paulo, Brazil",
+    location: "Sao Paulo, Brazil",
     previousUses: 15,
     riskScore: 8, // Very low risk
     originalStatus: "blocked",
     currentStatus: "approved",
-    overrideReason: "Assinatura recorrente em dispositivo confiável"
+    overrideReason: "Recurring subscription on trusted device"
   },
   {
     id: "tx-010",

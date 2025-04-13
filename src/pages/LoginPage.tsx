@@ -454,6 +454,13 @@ const LoginPage: React.FC = () => {
           <p className="text-xs text-center text-muted-foreground">
             By continuing, you agree to our Terms of Service and Privacy Policy.
           </p>
+          <Button
+            variant="ghost"
+            className="w-full mt-2"
+            onClick={() => navigate('/')}
+          >
+            ← Return to Homepage
+          </Button>
         </CardFooter>
       </Card>
     </div>
