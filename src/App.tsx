@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage";
 import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import Demo from "./pages/Demo";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Index />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/demo" element={<Demo />} />
           
           {/* Placeholder routes for footer links */}
           <Route path="/features" element={<PlaceholderPage title="Features" />} />
