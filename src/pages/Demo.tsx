@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -128,9 +127,14 @@ const Demo = () => {
         setCurrentModuleIndex(-1);
         setCompletedModules({});
         setProgress(0);
-        processNextModule();
+        startVerificationProcess();
       }, 2000);
     }
+  };
+
+  // Start the verification process by triggering the first module
+  const startVerificationProcess = () => {
+    processNextModule();
   };
 
   // Try again with Sentinel enabled
@@ -142,32 +146,31 @@ const Demo = () => {
   // Process verification modules one by one
   const processNextModule = () => {
     const nextIndex = currentModuleIndex + 1;
-    setCurrentModuleIndex(nextIndex);
     
     if (nextIndex < verificationModules.length) {
+      setCurrentModuleIndex(nextIndex);
+      
       const moduleProgress = Math.floor((nextIndex / verificationModules.length) * 100);
       setProgress(moduleProgress);
       
-      // Process the current module
+      // Process the current module with a delay
       setTimeout(() => {
         setCompletedModules(prev => ({
           ...prev,
           [verificationModules[nextIndex].id]: true
         }));
         
-        // Process the next module or move to success
+        // Move to the next module after a delay
         setTimeout(() => {
-          if (nextIndex < verificationModules.length - 1) {
-            processNextModule();
-          } else {
-            // All modules processed, move to success
-            setProgress(100);
-            setTimeout(() => {
-              setStage(DemoStage.SUCCESS);
-            }, 1000);
-          }
-        }, 300);
-      }, 600);
+          processNextModule(); // Call recursively to process the next module
+        }, 800);
+      }, 1200);
+    } else {
+      // All modules processed, set progress to 100% and move to success
+      setProgress(100);
+      setTimeout(() => {
+        setStage(DemoStage.SUCCESS);
+      }, 1000);
     }
   };
 
