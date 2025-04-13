@@ -13,13 +13,13 @@ export const RiskScoreBadge: React.FC<RiskScoreBadgeProps> = ({ score, className
   let colorClass: string;
   
   if (score < 30) {
-    riskLevel = 'Baixo';
+    riskLevel = 'Low';
     colorClass = 'bg-trust text-white';
   } else if (score < 70) {
-    riskLevel = 'Médio';
+    riskLevel = 'Medium';
     colorClass = 'bg-caution text-white';
   } else {
-    riskLevel = 'Alto';
+    riskLevel = 'High';
     colorClass = 'bg-risk text-white';
   }
   
@@ -38,7 +38,7 @@ export const RiskScoreBadge: React.FC<RiskScoreBadgeProps> = ({ score, className
           </div>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Risco {riskLevel} ({score}/100)</p>
+          <p>{riskLevel} Risk ({score}/100)</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
