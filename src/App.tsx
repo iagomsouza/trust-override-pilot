@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +9,7 @@ import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import Demo from "./pages/Demo";
+import LoginPage from "./pages/LoginPage";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +24,8 @@ const App = () => (
           <Route path="/dashboard" element={<Index />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/demo" element={<Demo />} />
-          
+
+
           {/* Placeholder routes for footer links */}
           <Route path="/features" element={<PlaceholderPage title="Features" />} />
           <Route path="/pricing" element={<PlaceholderPage title="Pricing" />} />
@@ -43,7 +44,8 @@ const App = () => (
           <Route path="/terms" element={<PlaceholderPage title="Terms of Service" />} />
           <Route path="/security" element={<PlaceholderPage title="Security" />} />
           <Route path="/compliance" element={<PlaceholderPage title="Compliance" />} />
-          
+
+          <Route path="/login" element={<LoginPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
