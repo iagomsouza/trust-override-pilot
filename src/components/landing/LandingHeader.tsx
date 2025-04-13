@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -45,6 +46,9 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
                   <Link to="/how-it-works" className="py-2 hover:text-blue-600" onClick={() => setIsMenuOpen(false)}>
                     How It Works
                   </Link>
+                  <Link to="/demo" className="py-2 hover:text-blue-600" onClick={() => setIsMenuOpen(false)}>
+                    Demo
+                  </Link>
                   <Button
                     variant="ghost"
                     onClick={() => {
@@ -82,6 +86,9 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
               </Link>
               <Link to="/how-it-works" className="hover:text-blue-600 transition-colors">
                 How It Works
+              </Link>
+              <Link to="/demo" className="hover:text-blue-600 transition-colors">
+                Demo
               </Link>
               <Button
                 variant="ghost"
