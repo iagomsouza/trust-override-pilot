@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield } from 'lucide-react';
@@ -50,9 +49,9 @@ const FooterSection: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-4 md:mb-0">
             <Shield className="h-6 w-6 text-blue-400 mr-2" />
-            <span className="font-semibold text-white">FraudGuard AI</span>
+            <span className="font-semibold text-white">Sentinel</span>
           </div>
-          <p className="text-sm">© {new Date().getFullYear()} FraudGuard AI. All rights reserved.</p>
+          <p className="text-sm">© {new Date().getFullYear()} Sentinel. All rights reserved.</p>
         </div>
       </div>
     </footer>

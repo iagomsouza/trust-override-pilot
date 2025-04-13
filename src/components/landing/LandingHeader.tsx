@@ -97,7 +97,7 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">FraudGuard AI</span>
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Sentinel</span>
           </Link>
         </div>
 
@@ -120,6 +120,9 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
                   </Link>
                   <Link to="/how-it-works" className="py-2 hover:text-blue-600" onClick={() => setIsMenuOpen(false)}>
                     How It Works
+                  </Link>
+                  <Link to="/demo" className="py-2 hover:text-blue-600" onClick={() => setIsMenuOpen(false)}>
+                    Demo
                   </Link>
                   <Button
                     variant="ghost"
@@ -154,6 +157,9 @@ const LandingHeader: React.FC<LandingHeaderProps> = ({ scrollToSection }) => {
               </Link>
               <Link to="/how-it-works" className="hover:text-blue-600 transition-colors">
                 How It Works
+              </Link>
+              <Link to="/demo" className="hover:text-blue-600 transition-colors">
+                Demo
               </Link>
               <Button
                 variant="ghost"

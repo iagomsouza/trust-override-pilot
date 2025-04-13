@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SupabaseProvider } from "@/contexts/SupabaseContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
-import Index from "./pages/Index";
 import LandingPage from "./pages/LandingPage";
 import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
@@ -17,6 +16,7 @@ import OnboardingPage from "./pages/OnboardingPage";
 import { supabase } from "./lib/supabase";
 import { useState, useEffect } from "react";
 import { Button } from "./components/ui/button";
+import Index from "./pages/Index";
 
 const AuthChecker = () => {
   const [authStatus, setAuthStatus] = useState<{
