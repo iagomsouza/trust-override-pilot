@@ -1,18 +1,9 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Instagram, Twitter, Linkedin, User } from 'lucide-react';
-
-interface UserProfile {
-  id: string;
-  created_at: string;
-  x_username: string | null;
-  instagram_username: string | null;
-  linkedin_url: string | null;
-  face_image_url: string | null;
-}
+import { UserProfile } from '@/hooks/useAuth';
 
 interface ProfileCardProps {
   userProfile: UserProfile;

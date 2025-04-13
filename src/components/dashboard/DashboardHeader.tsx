@@ -1,15 +1,7 @@
 
 import React from 'react';
 import { ProfileCard } from '@/components/dashboard/ProfileCard';
-
-interface UserProfile {
-  id: string;
-  created_at: string;
-  x_username: string | null;
-  instagram_username: string | null;
-  linkedin_url: string | null;
-  face_image_url: string | null;
-}
+import { UserProfile } from '@/hooks/useAuth';
 
 interface DashboardHeaderProps {
   userProfile: UserProfile;
